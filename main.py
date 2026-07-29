@@ -1,12 +1,9 @@
 import os
 
-from dotenv import load_dotenv
 from openai import OpenAI
 
-load_dotenv()
-
 client = OpenAI(
-    base_url="https://xasanovibrohim555--ep-kimi-k3-server.us-west.modal.direct/v1",
+    base_url=os.environ["MODAL_PROXY_BASE_URL"],
     api_key="unused",
     default_headers={
         "Modal-Key": os.environ["MODAL_PROXY_TOKEN_ID"],
